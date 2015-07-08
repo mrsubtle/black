@@ -99,6 +99,9 @@
 
 // classes
 
+	.hidden {
+		display: none !important;
+	}
 	.restrict960 {
 		display: block;
 		margin: 0px auto;
@@ -117,9 +120,18 @@
 			height: 100%;
 			.brand {
 				position: absolute;
-				top: 5%;
+				top: 15%;
 				left: 10%;
-				right: 10%;
+				right: 20%;
+				img {
+					width: 17em;
+					@media screen and (max-width: 976px) {
+						width: 12.5em;
+					}
+					@media screen and (max-width: 765px) {
+						width: 10em;
+					}
+				}
 			}
 			.heroText {
 				position: absolute;
@@ -142,6 +154,12 @@
 				max-height: 250px;
 				-webkit-transform: rotate(180deg);
 			}
+		}
+		&#vision {
+			background-size: 20%;
+			background-repeat: no-repeat;
+			background-position: 80% 50%;
+			background-image: url('../img/work/24Game-Android-Nexus5.png');
 		}
 		.textBlock {
 			position: absolute;

@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Black, Inc.</title>
+	<title>Black Digital Agency, Inc.</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	
 <section class="hero">
 	<div class="brand">
-		Black, Inc.
+		<img src="img/Blacklogo.svg">
 	</div>
 	<div class="heroText">
-		<div class="main">
-			Product Strategy, Research, and Design
+		<div class="main hidden">
+			We are <span style="letter-spacing:-1px !important;">Black</span>.
 		</div>
 		<div class="sub">
-			We love working with startups to build out core ideas, amazing experiences, habitual usage, and roadmap future growth.
+			We work with startups and other agencies to design, build, and plan digital products.
 		</div>
 		<div class="action">
 			<div class="c2a">
@@ -79,11 +79,12 @@
 		//DOM is ready, so do stuff
 
 		//video inits
-		$('section#vision').vide('img/motion/vision');
+		//$('section#vision').vide('img/motion/vision');
 		$('section#experiences').vide('img/motion/experiences');
 		$('section#research').vide('img/motion/research');
 		$('section#future').vide('img/motion/future');
 
+		/*
 		var videVision = $('section#vision').data('vide');
 		var videVisionVideo = videVision.getVideoObject();
 		videVisionVideo.pause();
@@ -93,6 +94,7 @@
 		$('section#vision').on('mouseout',function(){
 			videVisionVideo.pause();
 		});
+		*/
 
 		var videExperiences = $('section#experiences').data('vide');
 		var videExperiencesVideo = videExperiences.getVideoObject();
