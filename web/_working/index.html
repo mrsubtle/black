@@ -25,7 +25,7 @@
 		</div>
 	</div>
 </section>
-<section id="vision" class="g05">
+<section id="vision" class="g05" data-vide-bg="img/motion/vision" style="position: relative;">
 	<div class="textBlock">
 		<div class="c2a">
 			Focus your product's vision
@@ -78,13 +78,13 @@
 	$(function(){
 		//DOM is ready, so do stuff
 
+		/* no video for now
 		//video inits
-		//$('section#vision').vide('img/motion/vision');
+		$('section#vision').vide('img/motion/vision');
 		$('section#experiences').vide('img/motion/experiences');
 		$('section#research').vide('img/motion/research');
 		$('section#future').vide('img/motion/future');
 
-		/*
 		var videVision = $('section#vision').data('vide');
 		var videVisionVideo = videVision.getVideoObject();
 		videVisionVideo.pause();
@@ -94,7 +94,6 @@
 		$('section#vision').on('mouseout',function(){
 			videVisionVideo.pause();
 		});
-		*/
 
 		var videExperiences = $('section#experiences').data('vide');
 		var videExperiencesVideo = videExperiences.getVideoObject();
@@ -125,6 +124,7 @@
 		$('section#future').on('mouseout',function(){
 			videFutureVideo.pause();
 		});
+		*/
 
 
 	});
