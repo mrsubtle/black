@@ -12,35 +12,68 @@
 		<img src="img/Blacklogo.svg">
 	</div>
 	<div class="heroText">
-		<div class="main hidden">
-			We are <span style="letter-spacing:-1px !important;">Black</span>.
-		</div>
 		<div class="sub">
-			We work with startups and other agencies to design, build, and plan digital products.
+			Our life's work is to raise the bar for digital products.
 		</div>
 		<div class="action">
 			<div class="c2a">
-				Book us today
+				Let's work together
 			</div>
 		</div>
 	</div>
 </section>
-<section id="vision" class="g05" data-vide-bg="img/motion/vision" style="position: relative">
+<section id="vision" class="g05">
 	<div class="textBlock">
+		<div>
+			<p>
+				Let us help you answer the most important questions you have:
+			</p>
+			<p class="quote">
+				Are we trying to solve the <em>right</em> problem?
+			</p>
+			<p class="quote">
+				Are we doing it as <em>efficiently</em> as possible?
+			</p>
+			<p class="quote">
+				Are we <em>successful</em>?
+			</p>
+		</div>
 		<div class="c2a">
 			Focus your product's vision
 		</div>
 	</div>
 </section>
-<section id="experiences" class="">
+<section id="design" class="">
 	<div class="textBlock">
+		<div>
+			<p>
+				Understanding your audience is the first step to answering these questions.
+			</p>
+			<p>
+				We employ cognitive and social psychologists to help tailor your product to their specific goals and nuances.
+			</p>
+			<p>
+				Our designers work closely with our scientists to elevate your product to new hights.
+			</p>
+		</div>
 		<div class="c2a">
-			Create engaging experiences
+			Design for your audience
 		</div>
 	</div>
 </section>
 <section id="research" class="g05">
 	<div class="textBlock">
+		<div>
+			<p>
+				Evaluating your product's goals is a never-ending process.
+			</p>
+			<p>
+				We specialize in measuring the success of your product through in-app usage and behaviours.
+			</p>
+			<p>
+				Measuring leads to iteration, which leads to strengthening core behaviours, and ultimately an addictive experience.
+			</p>
+		</div>
 		<div class="c2a">
 			Grow habits through research
 		</div>
@@ -48,6 +81,17 @@
 </section>
 <section id="future" class="">
 	<div class="textBlock">
+		<div>
+			<p>
+				Understanding how your audience uses and engages with your product is the first step to future planning.
+			</p>
+			<p>
+				Knowing what features are more important to your audience is key to delivering value.
+			</p>
+			<p>
+				We can teach you how to be masters of your product's destiny.
+			</p>
+		</div>
 		<div class="c2a">
 			Shine a light on the future
 		</div>
@@ -77,6 +121,11 @@
 
 	$(function(){
 		//DOM is ready, so do stuff
+
+		//Hero image video
+
+		$('section.hero').vide('img/motion/clouds','posterType: jpg');
+
 
 		/* no video for now
 		//video inits
