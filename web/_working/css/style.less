@@ -3,8 +3,9 @@
  *  v1.0.0
  */
 
+// LESS Prefixer :: http://lessprefixer.com
+@import "prefixer.less";
 @import "../less/europa.less";
-//@import "../less/kube.less";
 
 // variables & mixins
 
@@ -27,6 +28,13 @@
 			background-color: rgba(0,0,0,0.1);
 		}
 
+	// animations
+
+		@timing-function: cubic-bezier(.17,.67,.27,1);
+		.animate(@du:300ms,@de:0ms){
+			transition: all @du @timing-function @de;
+		}
+
 // typography
 
 	html {
@@ -43,6 +51,23 @@
 	}
 
 	section {
+		font-size: 2.87em;
+		line-height: 1.38em;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+		p {
+			margin: 3vh 13vw;
+			&.small {
+				font-size: 0.65em;
+				line-height: 1.25em;
+			}
+		}
+		.quote {
+			font-size: .75em;
+			font-weight: 400;
+			opacity: 0.87;
+		}
 		.brand {
 			font-weight: 600;
 			letter-spacing: 0.137em;
@@ -50,30 +75,17 @@
 		.heroText {
 			line-height: 1.38em;
 			@media screen and (min-width: 977px) {
-				font-size: 2.1em;
+				font-size: 1.1em;
 			}
 			@media screen and (max-width: 976px) {
-				font-size: 1.88em;
+				font-size: 0.88em;
 			}
 			@media screen and (max-width: 765px) {
-				font-size: 1.48em;
+				font-size: 0.68em;
 			}
 			.main {
 				// primary hero header
 				font-weight: 600;
-			}
-			.c2a {
-				// primary hero call to action
-				// Use global definition below
-			}
-		}
-		.textBlock {
-			font-size: 2.87em;
-			line-height: 1.38em;
-			.quote {
-				font-size: .75em;
-				font-weight: 400;
-				opacity: 0.87;
 			}
 		}
 	}
@@ -88,6 +100,8 @@
 		text-transform: uppercase;
 		line-height: 1.5;
 		padding: 1rem 0rem;
+		cursor: pointer;
+		.animate(500ms,0ms);
 		&:after {
 			content: "";
 			//display: inline-block;
@@ -98,7 +112,10 @@
 			right: -1.5em;
 			border: 2px solid @colourTint;
 		}
-	}
+		&:hover {
+			.scale(0.97);
+		}
+	} 
 
 // classes
 
@@ -117,7 +134,7 @@
 	}
 	section {
 		position: relative;
-		height: 90%;
+		height: 100%;
 		text-align: center;
 		//.g05;
 		&.hero {
@@ -129,12 +146,12 @@
 				left: 10%;
 				right: 10%;
 				img {
-					width: 17em;
+					width: 30vw;
 					@media screen and (max-width: 976px) {
-						width: 12.5em;
+						width: 40vw;
 					}
 					@media screen and (max-width: 765px) {
-						width: 10em;
+						width: 50w;
 					}
 				}
 			}
@@ -150,14 +167,6 @@
 					margin-bottom: 1.87em;
 				}
 				.action {}
-			}
-			#pencil {
-				position: absolute;
-				top: -5%;
-				right: 5%;
-				height: 32vh;
-				max-height: 250px;
-				-webkit-transform: rotate(180deg);
 			}
 		}
 		.textBlock {
@@ -175,10 +184,83 @@
 				font-size: 1.48em;
 			}
 		}
+		.flex-container {
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-wrap: nowrap;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			-webkit-justify-content: space-around;
+			-ms-flex-pack: distribute;
+			justify-content: space-around;
+			-webkit-align-content: space-around;
+			-ms-flex-line-pack: distribute;
+			align-content: space-around;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+			width: 100%; height: 100%;
+			&.flex-center {
+				-webkit-justify-content: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				-webkit-align-content: center;
+				-ms-flex-line-pack: center;
+				align-content: center;
+				-webkit-align-items: center;
+				-ms-flex-align: center;
+				align-items: center;
+			}
+			&.flex-column {
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+			}
+			&.flex-row {
+				-webkit-flex-direction: row;
+				-ms-flex-direction: row;
+				flex-direction: row;
+			}
+
+			//flex-item
+			.flex-item {
+				-webkit-order: 0;
+				-ms-flex-order: 0;
+				order: 0;
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+				-webkit-align-self: auto;
+				-ms-flex-item-align: auto;
+				align-self: auto;
+				&.flex-item-single {
+					-webkit-flex: 1 1 auto;
+					-ms-flex: 1 1 auto;
+					flex: 1 1 auto;
+				}
+				&.flex-item-double {
+					-webkit-flex: 2 1 auto;
+					-ms-flex: 2 1 auto;
+					flex: 2 1 auto;
+				}
+				&.flex-item-stretch {
+					-webkit-align-self: stretch;
+					-ms-flex-item-align: stretch;
+					align-self: stretch;
+				}
+			}
+		}
 	}
 
 // objects
 
 	.c2a {
 		color: @colourTint;
+	}
+
+// section-specific
+
+	section#vision {
+		background-image: url(../img/bg/bg-vision.jpg);
 	}
