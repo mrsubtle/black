@@ -16,8 +16,27 @@
 			Our life's work is to raise the bar for digital products.
 		</div>
 		<div class="action">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="hero">
 				Let's work together
+			</div>
+		</div>
+	</div>
+</section>
+<section id="contact">
+	<div class="flex-container flex-column flex-center">
+		<div class="flex-item">
+			<form action="" id="contact">
+				<input id="txt_name" type="text" placeholder="Your name">
+				<input id="txt_email" type="email" placeholder="you@server.net">
+				<textarea id="txt_desc" name="detail" id="detail" rows="10" placeholder="A bit about you and your product"></textarea>
+			</form>
+		</div>
+		<div class="flex-item">
+			<div class="c2a" id="btn_frm_contact_submit">
+				INTRODUCE YOURSELF
+			</div>
+			<div class="disclaimer">
+				Your name and email will not be shared with any third party, nor will you be added to any mailing lists.  We promise.
 			</div>
 		</div>
 	</div>
@@ -35,7 +54,7 @@
 			</p>
 		</div>
 		<div class="flex-item">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="vision">
 				Focus your product's vision
 			</div>
 		</div>
@@ -54,7 +73,7 @@
 			</p>
 		</div>
 		<div class="flex-item">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="design">
 				Design for your audience
 			</div>
 		</div>
@@ -73,7 +92,7 @@
 			</p>
 		</div>
 		<div class="flex-item">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="build">
 				Build your product now
 			</div>
 		</div>
@@ -87,7 +106,7 @@
 			</p>
 		</div>
 		<div class="flex-item">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="research">
 				Grow habits through research
 			</div>
 		</div>
@@ -101,93 +120,48 @@
 			</p>
 		</div>
 		<div class="flex-item">
-			<div class="c2a">
+			<div class="btn c2a" data-referrer="analytics">
 				Shine a light on the future
 			</div>
 		</div>
 	</div>
 </section>
-<footer class="">
-	footer
+<section id="preview">
+	<div class="flex-container flex-column flex-center">
+		<div class="flex-item">
+			<p>
+				Let's turn your <strong>vision</strong> into <strong>reality</strong>.
+			</p>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="flex-container flex-column flex-center">
+		<div class="flex-item">
+			<img src="img/BlackLogo.svg">
+		</div>
+		<div id="social" class="flex-item flex-container flex-row">
+			<a href="http://be.net/mr_subtle/" class="flex-item social behance">Behance</a>
+			<a href="http://twitter.com/mr_subtle" class="flex-item social twitter">Twitter</a>
+			<a href="mailto:info@blackagency.co" class="flex-item social email">Email</a>
+		</div>
+	</div>
 </footer>
 
-
+<script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 <script src="js/lib/jquery-2.1.4.min.js"></script>
 <script src="js/lib/jquery.color-2.1.2.min.js"></script>
 <script src="js/lib/jquery.vide.js"></script>
+<script src="js/lib/jquery.smooth-scroll.min.js"></script>
 <script src="js/core.min.js"></script>
-<script type="text/javascript">
-	function rainbow() {
-		// 30 random hues with step of 12 degrees
-		var hue = Math.floor(Math.random() * 30) * 12;
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		return $.Color({
-			hue: hue,
-			saturation: 0.9,
-			lightness: 0.6,
-			alpha: 1
-		});
-	};
-
-	$(function(){
-		//DOM is ready, so do stuff
-
-		//Hero image video
-
-		$('section.hero').vide('img/motion/clouds','posterType: jpg');
-
-
-		/* no video for now
-		//video inits
-		$('section#vision').vide('img/motion/vision');
-		$('section#experiences').vide('img/motion/experiences');
-		$('section#research').vide('img/motion/research');
-		$('section#future').vide('img/motion/future');
-
-		var videVision = $('section#vision').data('vide');
-		var videVisionVideo = videVision.getVideoObject();
-		videVisionVideo.pause();
-		$('section#vision').on('mouseover',function(){
-			videVisionVideo.play();
-		});
-		$('section#vision').on('mouseout',function(){
-			videVisionVideo.pause();
-		});
-
-		var videExperiences = $('section#experiences').data('vide');
-		var videExperiencesVideo = videExperiences.getVideoObject();
-		videExperiencesVideo.pause();
-		$('section#experiences').on('mouseover',function(){
-			videExperiencesVideo.play();
-		});
-		$('section#experiences').on('mouseout',function(){
-			videExperiencesVideo.pause();
-		});
-
-		var videResearch = $('section#research').data('vide');
-		var videResearchVideo = videResearch.getVideoObject();
-		videResearchVideo.pause();
-		$('section#research').on('mouseover',function(){
-			videResearchVideo.play();
-		});
-		$('section#research').on('mouseout',function(){
-			videResearchVideo.pause();
-		});
-
-		var videFuture = $('section#future').data('vide');
-		var videFutureVideo = videFuture.getVideoObject();
-		videFutureVideo.pause();
-		$('section#future').on('mouseover',function(){
-			videFutureVideo.play();
-		});
-		$('section#future').on('mouseout',function(){
-			videFutureVideo.pause();
-		});
-		*/
-
-
-	});
-
+  ga('create', 'UA-71481905-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
 </body>
